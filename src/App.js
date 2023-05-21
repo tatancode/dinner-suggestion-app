@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import styles from './App.module.css';
 
 function App() {
+  const [dish, setDish] = useState('Click the button to get a dish suggestion!');
+
+  const getSuggestion = async () => {
+    const response = await fetch('https://dinner-suggestion-api.herokuapp.com/suggestion');
+    const data = await response.text();
+
+    setDish(data);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Dinner Suggestions</h1>
+      <p className={styles.dish}>{dish}</p>
+      <button className={styles.button} onClick={getSuggestion}>Get a suggestion!</button>
     </div>
   );
 }
