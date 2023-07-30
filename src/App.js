@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import styles from './App.module.css';
+import styles from './App.css';
 
 function App() {
-  const [dish, setDish] = useState('Click the button to get a dish suggestion!');
+  const [dish, setDish] = useState('Click the button to get a recipe suggestion!');
 
   const getSuggestion = async () => {
     const response = await fetch('https://dinner-suggestion-api.herokuapp.com/suggestion');
