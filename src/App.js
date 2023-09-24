@@ -5,7 +5,7 @@ function App() {
   const [dish, setDish] = useState('Click the button to get a recipe suggestion!');
 
   const getSuggestion = async () => {
-    const response = await fetch('https://dinner-suggestion-api.herokuapp.com/suggestion');
+    const response = await fetch('http://localhost:4567/suggestion');
     const data = await response.text();
 
     setDish(data);
