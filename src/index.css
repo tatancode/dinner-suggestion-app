@@ -1,19 +1,72 @@
-body {
+/* Reset some default browser styles */
+body,
+h1,
+p {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  /* Switching to a more universally accepted modern font */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #181a1f;
-  /* Dark background */
-  color: #e0e0e0;
-  /* Light text for contrast */
+  padding: 0;
 }
 
-code {
-  font-family: 'Fira Code', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-  /* Introduced 'Fira Code', a modern coding font */
-  background-color: #282c34;
-  padding: 2px 5px;
-  border-radius: 4px;
+body {
+  font-family: 'Helvetica', Arial, sans-serif;
+  /* Use Helvetica font */
+  background-color: #f4f4f4;
+  /* Light gray background */
+  color: #333;
+  /* Dark gray text */
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+  /* Dark gray title */
+}
+
+.dish {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #555;
+  /* Medium gray text */
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  /* White text */
+  background-color: #007bff;
+  /* Blue button background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2em;
+  }
+
+  .dish {
+    font-size: 1.2em;
+  }
+
+  .button {
+    font-size: 0.9em;
+  }
 }
